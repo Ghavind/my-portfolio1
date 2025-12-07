@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghavind 💻 | CS Student @ UPNM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Profile -->
+        <header class="header">
+            <div class="profile-header">
+                <img src="RESUME PIC.jpg" alt="Profile Picture" class="profile-img">
+                <h1>Ghavind's Website</h1>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="menu-toggle" id="menuToggle">
+                <span class="menu-icon">☰</span>
+            </button>
+            
+            <!-- Navigation Menu -->
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="#" onclick="showSection('home')" class="nav-link nav-active">Home</a></li>
+                    <li><a href="#" onclick="showSection('education')" class="nav-link">Education</a></li>
+                    <li><a href="#" onclick="showSection('skills')" class="nav-link">Skills</a></li>
+                    <li><a href="#" onclick="showSection('calculator')" class="nav-link">Calculator</a></li>
+                    <li><a href="#" onclick="showSection('contact')" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- ========== HOME SECTION ========== -->
+        <section id="home" class="website-section active-section">
+            <div class="about-card">
+                <h2 class="swag-title">👋 About Me</h2>
+                <div class="about-content">
+                    <p class="intro-text">Hey there! I'm <span class="highlight">Ghavind</span>, a passionate Computer Science student specializing in <span class="cyber-text">Cybersecurity</span> at UPNM.</p>
+                    <p class="mission-text">I'm on a mission to secure the digital world, one line of code at a time. 🔒💻</p>
+                    <div class="tagline">
+                        <span class="tag">#CyberWarrior</span>
+                        <span class="tag">#CodeNinja</span>
+                        <span class="tag">#FutureSecurityExpert</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ========== EDUCATION SECTION ========== -->
+        <section id="education" class="website-section">
+            <h2 class="section-title">Education</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Institution</th>
+                            <th>Qualification</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Year">2024 - Present</td>
+                            <td data-label="Institution">UPNM</td>
+                            <td data-label="Qualification">Degree in Computer Science (Cybersecurity)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Year">2022 - 2024</td>
+                            <td data-label="Institution">PUO</td>
+                            <td data-label="Qualification">Diploma</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Year">2016 - 2021</td>
+                            <td data-label="Institution">SMK JD</td>
+                            <td data-label="Qualification">SPM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- ========== SKILLS SECTION ========== -->
+        <section id="skills" class="website-section">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS, JavaScript, PHP</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🔗</div>
+                    <h3>Network Fundamentals</h3>
+                    <p>Cybersecurity basics & networking</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📊</div>
+                    <h3>Data Handling</h3>
+                    <p>Microsoft Excel & Data Analysis</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ========== CALCULATOR SECTION ========== -->
+        <section id="calculator" class="website-section">
+            <div class="calculator-card">
+                <h2 class="section-title">CGPA Calculator</h2>
+                <div class="calculator-grid">
+                    <div class="calc-input-group">
+                        <label for="g1">Grade 1:</label>
+                        <input type="number" id="g1" placeholder="e.g., 4.0" step="0.1" min="0" max="4.0">
+                    </div>
+                    <div class="calc-input-group">
+                        <label for="c1">Credit 1:</label>
+                        <input type="number" id="c1" placeholder="e.g., 3" min="1" max="10">
+                    </div>
+                    <div class="calc-input-group">
+                        <label for="g2">Grade 2:</label>
+                        <input type="number" id="g2" placeholder="e.g., 3.5" step="0.1" min="0" max="4.0">
+                    </div>
+                    <div class="calc-input-group">
+                        <label for="c2">Credit 2:</label>
+                        <input type="number" id="c2" placeholder="e.g., 2" min="1" max="10">
+                    </div>
+                </div>
+                <button class="calc-btn" onclick="calcCGPA()">
+                    <span class="calc-icon">📊</span> Calculate CGPA
+                </button>
+                <div id="output" class="calc-result"></div>
+            </div>
+        </section>
+        
+        <!-- ========== CONTACT SECTION ========== -->
+        <section id="contact" class="website-section">
+            <div class="contact-card">
+                <h2 class="section-title">Get In Touch</h2>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-name">Name</label>
+                            <input type="text" id="contact-name" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" required placeholder="your@email.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" required placeholder="Your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span class="send-icon">📨</span> Send Message
+                    </button>
+                </form>
+                <div id="form-response" class="form-response"></div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2024 Ghavind | CS Student @ UPNM</p>
+            <p class="footer-tag">Securing Digital Frontiers</p>
+        </footer>
+    </div>
+    
+    <script>
+        // ========== MOBILE MENU TOGGLE ==========
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('nav-open');
+            menuToggle.classList.toggle('menu-open');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                mainNav.classList.remove('nav-open');
+                menuToggle.classList.remove('menu-open');
+            });
+        });
+        
+        // ========== SECTION NAVIGATION ==========
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.website-section').forEach(section => {
+                section.classList.remove('active-section');
+            });
+            
+            // Remove active class from all nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('nav-active');
+            });
+            
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active-section');
+            
+            // Find and activate the correct nav link
+            const sectionMap = {
+                'home': 'Home',
+                'education': 'Education',
+                'skills': 'Skills',
+                'calculator': 'Calculator',
+                'contact': 'Contact'
+            };
+            
+            const targetText = sectionMap[sectionId];
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.textContent.trim() === targetText) {
+                    link.classList.add('nav-active');
+                }
+            });
+            
+            // Scroll to top smoothly
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // ========== CGPA CALCULATOR ==========
+        function calcCGPA() {
+            const g1 = parseFloat(document.getElementById('g1').value);
+            const g2 = parseFloat(document.getElementById('g2').value);
+            const c1 = parseFloat(document.getElementById('c1').value);
+            const c2 = parseFloat(document.getElementById('c2').value);
+            
+            if(isNaN(g1) || isNaN(g2) || isNaN(c1) || isNaN(c2)){
+                showMessage('Please enter valid numbers in all fields', 'error');
+                return;
+            }
+            
+            if(g1 < 0 || g1 > 4.0 || g2 < 0 || g2 > 4.0) {
+                showMessage('Grades must be between 0.0 and 4.0', 'error');
+                return;
+            }
+            
+            const result = ((g1 * c1) + (g2 * c2)) / (c1 + c2);
+            document.getElementById('output').innerHTML = `
+                <div class="result-card">
+                    <h3>Your CGPA Result</h3>
+                    <div class="result-value">${result.toFixed(2)}</div>
+                    <p class="result-note">Based on ${c1 + c2} total credits</p>
+                </div>
+            `;
+            
+            // Scroll to result
+            document.getElementById('output').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
+        }
+        
+        // ========== CONTACT FORM HANDLER ==========
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('contact-name').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const message = document.getElementById('contact-message').value.trim();
+            
+            if(!name || !email || !message) {
+                showMessage('Please fill in all fields', 'error');
+                return;
+            }
+            
+            const responseDiv = document.getElementById('form-response');
+            responseDiv.innerHTML = `
+                <div class="success-card">
+                    <div class="success-icon">✓</div>
+                    <h3>Message Sent Successfully!</h3>
+                    <div class="success-details">
+                        <p><strong>Name:</strong> ${name}</p>
+                        <p><strong>Email:</strong> ${email}</p>
+                        <p><strong>Message:</strong> ${message.substring(0, 100)}${message.length > 100 ? '...' : ''}</p>
+                    </div>
+                    <p class="success-note">I'll get back to you within 24 hours!</p>
+                </div>
+            `;
+            responseDiv.style.display = 'block';
+            
+            // Clear form
+            document.getElementById('contactForm').reset();
+            
+            // Scroll to response
+            responseDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // ========== HELPER FUNCTIONS ==========
+        function showMessage(message, type = 'info') {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type}`;
+            alertDiv.textContent = message;
+            alertDiv.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 15px 20px;
+                background: ${type === 'error' ? '#ef4444' : '#10b981'};
+                color: white;
+                border-radius: 10px;
+                z-index: 1000;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            document.body.appendChild(alertDiv);
+            
+            setTimeout(() => {
+                alertDiv.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => alertDiv.remove(), 300);
+            }, 3000);
+        }
+        
+        // ========== INITIALIZATION ==========
+        window.onload = function() {
+            showSection('home');
+            
+            // Add CSS animations
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                @keyframes slideOut {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(100%); opacity: 0; }
+                }
+                @keyframes fadeInUp {
+                    from { opacity: 0; transform: translateY(30px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                .website-section.active-section > * {
+                    animation: fadeInUp 0.6s ease;
+                }
+            `;
+            document.head.appendChild(style);
+        };
+        
+        // ========== TOUCH EVENT SUPPORT ==========
+        document.addEventListener('touchstart', function() {}, {passive: true});
+    </script>
+</body>
+</html>
